@@ -212,3 +212,8 @@ CREATE TABLE audit_log (
     created_at TIMESTAMPTZ DEFAULT now()
 );
 
+alter table container
+drop column position;
+
+alter table container
+add column position geography(Point, 4326) not null;
